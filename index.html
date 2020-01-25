@@ -5,7 +5,6 @@
         <link href="style.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=KoHo|Major+Mono+Display" rel="stylesheet" />
         <script src="game.js"></script>
-        <script src="createPlayer.js"></script>
     </head>
 <body>
     <div id="gameMenu">
@@ -15,7 +14,7 @@
             <option value="http://localhost:8081">Dev Server</option>
         </select>
         <script src="serverSelectionList.js"></script>
-        <button onclick="createPlayer(nameInput.value); this.blur();">Play</button>
+        <button onclick="startGame();">Play</button>
         <br />
         <br />
         <p>Right click to use speed boost, Left click to shoot. Change direction with mouse. Created by <a href="https://abaer.dev">Archie Baer</a>.</p>
