@@ -33,7 +33,7 @@ a {
     margin-bottom: 0;
 }
 
-input, button {
+select, button {
     border: none;
     background: var(--nearlyWhite);
     height: 30px;
