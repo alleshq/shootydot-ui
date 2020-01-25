@@ -1,7 +1,22 @@
 <html>
     <head>
-        <title>Shootydot</title>
+        <title>shootydot</title>
         <script src="socket.io.js"></script>
-        <script src="game.js"></script>
+        <link href="style.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=KoHo|Major+Mono+Display" rel="stylesheet" />
     </head>
+<body>
+    <div id="gameMenu">
+        <p id="title">shootydot</p>
+        <p>Version 2</p>
+        <p>
+            <input id="nameInput" placeholder="Name" />
+            <button onclick="createPlayer(nameInput.value); localStorage.setItem('name', nameInput.value); this.blur();">Play</button>
+        </p>
+        <script>nameInput.value = localStorage.getItem("name") ? localStorage.getItem("name") : "";</script>
+        <br />
+        <p>Right click to use speed boost, Left click to shoot. Change direction with mouse. Created by <a href="https://abaer.dev">Archie Baer</a>.</p>
+    </div>
+    <canvas id="canvas"></canvas>
+</body>
 </html>
