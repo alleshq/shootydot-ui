@@ -1,5 +1,5 @@
 const theme = {};
-if (!localStorage.getItem("server")) localStorage.setItem("server", "http://localhost:3000");
+if (!localStorage.getItem("server")) localStorage.setItem("server", "http://localhost:8081");
 const serverUrl = localStorage.getItem("server");
 var gameData;
 
