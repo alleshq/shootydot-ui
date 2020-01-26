@@ -60,13 +60,12 @@ const startGame = () => {
     }).then(res => {
         if (res.status === 200) {
             res.json().then(body => {
-                //Store Credentials
+                //Game Starts
                 playerCredentials = body;
-
-                //Hide Menu and set subtitle
                 gameMenu.classList.add("hidden");
                 subtitle.classList.remove("error");
                 subtitle.innerText = "";
+                deathStrikes = 0;
             });
         } else if (res.status === 429) {
             showError("You seem to be playing already.");
