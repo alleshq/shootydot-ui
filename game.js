@@ -11,7 +11,10 @@ var me;
 const splashTexts = [
     "pew pew pew",
     "made with \u2764\ufe0f by Alles",
-    "now with 100% less sugar!"
+    "now with 100% less sugar!",
+    "shoot those dots",
+    "remember fortnite? imagine that but without murder",
+    "*hugs*"
 ];
 
 //Socket.io
