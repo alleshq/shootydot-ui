@@ -10,7 +10,7 @@ var me;
 
 const splashTexts = [
     "pew pew pew",
-    "made with ❤️ by Alles",
+    "made with \u2764\ufe0f by Alles",
     "now with 100% less sugar!"
 ];
 
