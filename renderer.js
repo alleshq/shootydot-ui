@@ -5,9 +5,6 @@ const distanceMultiplier = 3;
 var zoom = 1;
 const theme = {
     bg: "#2c3e50",
-    player: "#e74c3c",
-    playerInfected: "#2ecc71",
-    playerVip: "#6029ad",
     text: "#95a5a6",
     speedBar: "#27ae60",
     speedBarBg: "#95a5a6",
@@ -40,7 +37,7 @@ const render = () => {
 
     //Draw self
     gameScreen.beginPath();
-    gameScreen.fillStyle = me.plague ? theme.playerInfected : theme.player;
+    gameScreen.fillStyle = me.color;
     gameScreen.arc(centerX - (playerSize * zoom) / 2, centerY - (playerSize * zoom) / 2, playerSize * zoom, 0, Math.PI * 2);
     gameScreen.fill();
 
@@ -48,7 +45,7 @@ const render = () => {
     Object.keys(gameData.players).forEach(id => {
         if (id === playerCredentials.id) return; //Don't render self
         const player = gameData.players[id];
-        gameScreen.fillStyle = me.plague ? theme.playerInfected : (me.vip ? theme.playerVip : theme.player);
+        gameScreen.fillStyle = me.color;
         const relativeX = centerX - ((me.x - player.x) * distanceMultiplier * zoom);
         const relativeY = centerY - ((me.y - player.y) * distanceMultiplier * zoom);
         gameScreen.beginPath();
