@@ -1,4 +1,5 @@
-if (!localStorage.getItem("server")) localStorage.setItem("server", "http://localhost:8081");
+const defaultServer = "https://silent-firefox-43.telebit.io";
+if (!localStorage.getItem("server")) localStorage.setItem("server", defaultServer);
 const serverUrl = localStorage.getItem("server");
 const token = localStorage.getItem("token");
 var gameData;
