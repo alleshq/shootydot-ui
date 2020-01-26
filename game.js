@@ -1,17 +1,22 @@
-const theme = {};
 if (!localStorage.getItem("server")) localStorage.setItem("server", "http://localhost:8081");
 const serverUrl = localStorage.getItem("server");
 var gameData;
 var playerCredentials;
-var player;
+var me;
 
 //Socket.io
 const socket = io(serverUrl);
 socket.on("data", data => {
     gameData = data;
     if (playerCredentials) {
-        player = gameData.players[playerCredentials.id];
-        console.log(player);
+        me = gameData.players[playerCredentials.id];
+        if (!me) {
+            //Death
+            playerCredentials = undefined;
+            gameMenu.classList.remove("hidden");
+            return;
+        };
+        render();
     }
 });
 
