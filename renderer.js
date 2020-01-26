@@ -84,11 +84,11 @@ const render = () => {
 
     //Text Overlay Config
     var textOverlays = [
-    `x: ${Math.floor(me.x)}`,
-    `y: ${Math.floor(me.y)}`,
-    `score: ${me.score}`,
+    `@${me.name}`,
     `players online: ${Object.keys(gameData.players).length}`,
-    `@${me.name}`
+    `score: ${me.score}`,
+    `x: ${Math.floor(me.x)}`,
+    `y: ${Math.floor(me.y)}`
     ];
 
     //Text Overlays
