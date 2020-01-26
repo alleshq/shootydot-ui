@@ -2,6 +2,8 @@ const defaultServer = "https://silent-firefox-43.telebit.io";
 if (!localStorage.getItem("server")) localStorage.setItem("server", defaultServer);
 const serverUrl = localStorage.getItem("server");
 const token = localStorage.getItem("token");
+const maxDeathStrikes = 30;
+var deathStrikes;
 var gameData;
 var playerCredentials;
 var me;
@@ -19,11 +21,15 @@ socket.on("data", data => {
     if (playerCredentials) {
         me = gameData.players[playerCredentials.id];
         if (!me) {
-            //Death
-            playerCredentials = undefined;
-            shooting = false;
-            subtitle.innerText = splashTexts[Math.floor(Math.random() * splashTexts.length)];
-            gameMenu.classList.remove("hidden");
+            if (deathStrikes < maxDeathStrikes) {
+                deathStrikes++;
+            } else {
+                //Death
+                playerCredentials = undefined;
+                shooting = false;
+                subtitle.innerText = splashTexts[Math.floor(Math.random() * splashTexts.length)];
+                gameMenu.classList.remove("hidden");
+            }
             return;
         };
         render();
