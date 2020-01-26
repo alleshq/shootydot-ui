@@ -1,5 +1,5 @@
 const playerSize = 20;
-const starSize = 10;
+const starSize = 5;
 const bulletSize = 5;
 const distanceMultiplier = 3;
 var zoom = 1;
@@ -20,6 +20,7 @@ const render = () => {
     const gameScreen = canvas.getContext("2d");
     const centerX = canvas.width / 2;
     const centerY = canvas.height / 2;
+    canvas.style.border = me.score <= 20 ? "solid 5px red" : "";
 
     //Background
     gameScreen.fillStyle = theme.bg;
@@ -28,8 +29,8 @@ const render = () => {
     //Draw Stars
     gameScreen.fillStyle = theme.star;
     gameData.stars.forEach(star => {
-        const relativeX = centerX - ((me.x - star.x) * distanceMultiplier * zoom);
-        const relativeY = centerY - ((me.y - star.y) * distanceMultiplier * zoom);
+        const relativeX = centerX - ((me.x - star.x) * distanceMultiplier * zoom) + (me.plague ? Math.floor(Math.random() * 10) - 5 : 0);
+        const relativeY = centerY - ((me.y - star.y) * distanceMultiplier * zoom) + (me.plague ? Math.floor(Math.random() * 10) - 5 : 0);
         gameScreen.beginPath();
         gameScreen.arc(relativeX - (starSize * zoom) / 2, relativeY - (starSize * zoom) / 2, starSize * zoom, 0, Math.PI * 2);
         gameScreen.fill();
