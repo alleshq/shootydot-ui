@@ -20,6 +20,17 @@ socket.on("data", data => {
     }
 });
 
+//Player Action
+const playerAction = (action, param) => {
+    if (!playerCredentials) return;
+    socket.emit("action", {
+        id: playerCredentials.id,
+        secret: playerCredentials.secret,
+        action,
+        param
+    });
+};
+
 //Start Game
 const startGame = () => {
     //Create Player
