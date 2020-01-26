@@ -34,7 +34,7 @@ const render = () => {
         const relativeX = centerX - ((me.x - star.x) * distanceMultiplier * zoom);
         const relativeY = centerY - ((me.y - star.y) * distanceMultiplier * zoom);
         gameScreen.beginPath();
-        gameScreen.arc(relativeX - (playerSize * zoom) / 2, relativeY - (starSize * zoom) / 2, starSize * zoom, 0, Math.PI * 2);
+        gameScreen.arc(relativeX - (starSize * zoom) / 2, relativeY - (starSize * zoom) / 2, starSize * zoom, 0, Math.PI * 2);
         gameScreen.fill();
     });
 
