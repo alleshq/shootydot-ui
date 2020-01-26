@@ -45,7 +45,7 @@ const render = () => {
     Object.keys(gameData.players).forEach(id => {
         if (id === playerCredentials.id) return; //Don't render self
         const player = gameData.players[id];
-        gameScreen.fillStyle = me.color;
+        gameScreen.fillStyle = player.color;
         const relativeX = centerX - ((me.x - player.x) * distanceMultiplier * zoom);
         const relativeY = centerY - ((me.y - player.y) * distanceMultiplier * zoom);
         gameScreen.beginPath();
