@@ -58,15 +58,14 @@ const render = () => {
     });
 
     //Draw Bullets
-    //gamescreen.fillStyle = theme.bullet;
-    //for (var i = 0; i < gamedata.bullets.length; i++) {
-    //var currentBullet = gamedata.bullets[i];
-    //var xoncanvas = centerx - ((myPlayerData.x - currentBullet.x) * distanceMultiplier);
-    //var yoncanvas = centery - ((myPlayerData.y - currentBullet.y) * distanceMultiplier);
-    //gamescreen.beginPath();
-    //gamescreen.arc(xoncanvas - bulletSize / 2, yoncanvas - bulletSize / 2, bulletSize, 0, Math.PI * 2);
-    //gamescreen.fill();
-    //}
+    gameScreen.fillStyle = theme.bullet;
+    gameData.bullets.forEach(bullet => {
+        const relativeX = centerX - ((me.x - bullet.x) * distanceMultiplier);
+        const relativeY = centerY - ((me.y - bullet.y) * distanceMultiplier);
+        gameScreen.beginPath();
+        gameScreen.arc(relativeX - bulletSize / 2, relativeY - bulletSize / 2, bulletSize, 0, Math.PI * 2);
+        gameScreen.fill();
+    });
 
     //Speed Bar
     gameScreen.fillStyle = theme.speedBarBg;
