@@ -80,7 +80,8 @@ const render = () => {
     `x: ${Math.floor(me.x)}`,
     `y: ${Math.floor(me.y)}`,
     `score: ${me.score}`,
-    `players online: ${Object.keys(gameData.players).length}`
+    `players online: ${Object.keys(gameData.players).length}`,
+    `@${me.name}`
     ];
 
     //Text Overlays
