@@ -47,7 +47,7 @@ const render = () => {
     Object.keys(gameData.players).forEach(id => {
         if (id === playerCredentials.id) return; //Don't render self
         const player = gameData.players[id];
-        gameScreen.fillStyle = currentPlayer.plague ? theme.playerInfected : (currentPlayer.vip ? theme.playerVip : theme.player);
+        gameScreen.fillStyle = me.plague ? theme.playerInfected : (me.vip ? theme.playerVip : theme.player);
         const relativeX = centerX - ((me.x - player.x) * distanceMultiplier);
         const relativeY = centerY - ((me.y - player.y) * distanceMultiplier);
         gameScreen.beginPath();
