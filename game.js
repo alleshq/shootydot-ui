@@ -1,5 +1,6 @@
 if (!localStorage.getItem("server")) localStorage.setItem("server", "http://localhost:8081");
 const serverUrl = localStorage.getItem("server");
+const token = localStorage.getItem("token");
 var gameData;
 var playerCredentials;
 var me;
@@ -34,9 +35,14 @@ const playerAction = (action, param) => {
 
 //Start Game
 const startGame = () => {
+    if (!token) return location.href = "/auth";
+
     //Create Player
     fetch(`${serverUrl}/join`, {
-        method: "post"
+        method: "post",
+        headers: {
+            authorization: token
+        }
     }).then(res => {
         if (res.status === 200) {
             res.json().then(body => {
