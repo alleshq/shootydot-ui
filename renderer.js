@@ -9,6 +9,7 @@ const theme = {
     speedBar: "#27ae60",
     speedBarBg: "#95a5a6",
     speedBarActive: "#e67e22",
+    healthBorder: "#e74c3c",
     star: "#bdc3c7",
     bullet: "#f39c12",
     font: "'KoHo', sans-serif"
@@ -20,7 +21,6 @@ const render = () => {
     const gameScreen = canvas.getContext("2d");
     const centerX = canvas.width / 2;
     const centerY = canvas.height / 2;
-    canvas.style.border = me.score <= 20 ? "solid 5px red" : "";
 
     //Background
     gameScreen.fillStyle = theme.bg;
@@ -72,6 +72,15 @@ const render = () => {
     gameScreen.fillRect(centerX - 100, canvas.height - 80, 200, 40);
     gameScreen.fillStyle = me.speedBoost.active ? theme.speedBarActive : theme.speedBar;
     gameScreen.fillRect(centerX - 100, canvas.height - 80, me.speedBoost.full * 2, 40);
+
+    //Red Health Border
+    if (me.score <= 20) {
+        gameScreen.strokeStyle = theme.healthBorder;
+        gameScreen.lineWidth = 10;
+        gameScreen.beginPath();
+        gameScreen.rect(0, 0, canvas.width, canvas.height);
+        gameScreen.stroke();
+    }
 
     //Text Overlay Config
     var textOverlays = [
