@@ -20,12 +20,21 @@ canvas.oncontextmenu = e => {
 
 //Shooting
 var shooting = false;
-canvas.onmousedown = function (e) {
+canvas.onmousedown = e => {
     if (e.button === 0) shooting = true;
 };
-canvas.onmouseup = function (e) {
+canvas.onmouseup = e => {
     if (e.button === 0) shooting = false;
 };
-setInterval(function () {
+setInterval(() => {
     if (shooting) playerAction("shoot");
 }, 100);
+
+//Scroll for Zoom
+canvas.onwheel = e => {
+    if (e.deltaY < 0) {
+        if (zoom < 1.5) zoom = (zoom * 10 + 1) / 10;
+    } else {
+        if (zoom > 0.6) zoom = (zoom * 10 - 1) / 10;
+    }
+};
