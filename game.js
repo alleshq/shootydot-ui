@@ -6,6 +6,12 @@ var gameData;
 var playerCredentials;
 var me;
 
+const splashTexts = [
+    "pew pew pew",
+    "made with ❤️ by Alles",
+    "now with 100% less sugar!"
+];
+
 //Socket.io
 const socket = io(serverUrl);
 socket.on("data", data => {
@@ -16,6 +22,7 @@ socket.on("data", data => {
             //Death
             playerCredentials = undefined;
             shooting = false;
+            subtitle.innerText = splashTexts[Math.floor(Math.random() * splashTexts.length)];
             gameMenu.classList.remove("hidden");
             return;
         };
@@ -50,9 +57,21 @@ const startGame = () => {
                 //Store Credentials
                 playerCredentials = body;
 
-                //Hide Menu
+                //Hide Menu and set subtitle
                 gameMenu.classList.add("hidden");
+                subtitle.classList.remove("error");
+                subtitle.innerText = "";
             });
+        } else if (res.status === 429) {
+            showError("You seem to be playing already.");
+        } else if (res.status === 401) {
+            location.href = "/auth";
         }
-    }).catch(() => {});
+    }).catch(() => showError("Something went wrong."));
+};
+
+//Error Display
+const showError = msg => {
+    subtitle.innerText = `Error: ${msg}`;
+    subtitle.classList.add("error");
 };

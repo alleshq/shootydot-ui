@@ -37,6 +37,15 @@ a {
     margin-bottom: 0;
 }
 
+#subtitle {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+#subtitle.error {
+    color: #e74c3c;
+}
+
 select, button {
     border: none;
     background: var(--nearlyWhite);
