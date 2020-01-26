@@ -13,6 +13,7 @@ socket.on("data", data => {
         if (!me) {
             //Death
             playerCredentials = undefined;
+            shooting = false;
             gameMenu.classList.remove("hidden");
             return;
         };
