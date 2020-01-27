@@ -38,7 +38,21 @@ const splashTexts = [
     "what you're referring to as linux, is in fact, gnu/linux",
     "no, richard, it's 'linux', not 'gnu/linux'",
     "thanks for playing",
-    "html5 canvas"
+    "html5 canvas",
+    "powered by pixels",
+    "this text changes every time you die",
+    "emoticons (•◡•)",
+    "Version 69",
+    "made by Archie",
+    "cAPS lOCK",
+    "may contain string interpolation",
+    "powered by binary",
+    "may the force be with you",
+    "there's no place like 127.0.0.1",
+    "et phone home",
+    "just keep swimming",
+    "roads? where we're going, we don't need roads.",
+    "to infinity and beyond"
 ];
 
 //Socket.io
