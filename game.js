@@ -10,11 +10,35 @@ var me;
 
 const splashTexts = [
     "pew pew pew",
-    "made with \u2764\ufe0f by Alles",
+    "made with \u2764\ufe0f by alles",
     "now with 100% less sugar!",
-    "shoot those dots",
     "remember fortnite? imagine that but without murder",
-    "*hugs*"
+    "use a scroll wheel to zoom in and out",
+    "made with *magic*. and also javascript.",
+    "open-source on github",
+    "also try Minecraft",
+    "follow @alleshq on Twitter",
+    "as seen on YouTube",
+    "han shot first",
+    "qonya blez sehr qwa spok",
+    "powered by the interwebz",
+    "it's javascript, not java",
+    "not available on steam",
+    "trigonometry!",
+    "the plague spreads through bullets",
+    "made in \u{1F1EC}\u{1F1E7}",
+    "may contain nuts",
+    "zero sales and counting",
+    "made with circles",
+    "multiplayer!",
+    "words go here",
+    "not touchscreen-friendly!",
+    "nothing to see here",
+    "not to be played on internet explorer",
+    "what you're referring to as linux, is in fact, gnu/linux",
+    "no, richard, it's 'linux', not 'gnu/linux'",
+    "thanks for playing",
+    "html5 canvas"
 ];
 
 //Socket.io
