@@ -41,7 +41,7 @@ const splashTexts = [
     "html5 canvas",
     "powered by pixels",
     "this text changes every time you die",
-    "emoticons (•◡•)",
+    "emoticons (\u2022\u25e1\u2022)",
     "Version 69",
     "made by Archie",
     "cAPS lOCK",
