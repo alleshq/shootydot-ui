@@ -73,6 +73,11 @@ const render = () => {
     gameScreen.fillStyle = me.speedBoost.active ? theme.speedBarActive : theme.speedBar;
     gameScreen.fillRect(centerX - 100, canvas.height - 80, me.speedBoost.full * 2, 40);
 
+    //Score
+    gameScreen.fillStyle = theme.text;
+    gameScreen.font = `25px ${theme.font}`;
+    gameScreen.fillText(me.score, centerX - gameScreen.measureText(me.score).width / 2, canvas.height - 100);
+
     //Red Health Border
     if (me.score <= 20) {
         gameScreen.strokeStyle = theme.healthBorder;
@@ -86,7 +91,6 @@ const render = () => {
     var textOverlays = [
     `@${me.name}`,
     `players online: ${Object.keys(gameData.players).length}`,
-    `score: ${me.score}`,
     `x: ${Math.floor(me.x)}`,
     `y: ${Math.floor(me.y)}`
     ];
